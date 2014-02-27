@@ -50,7 +50,11 @@
 - (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder {
 	self.managedObjectContext = [coder decodeObjectOfClass:[NSManagedObjectContext class]
 													forKey:@"managedObjectContext"];
-	
+
+	NSLog(@"I would expect the decoded managedObjectContext to be the same object accross all of the view controllers, because that's how NSCoding has worked in the past. Setting the persistent store coordinator in the app delegate, would cause all of the MOC objects to be fully realized by the time the view controllers were asked to be decoded.");
+
+	NSLog(@"The question is, what is the preferred way to propogate shared objects to all of the view controllers after state restoration?");
+
 	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.managedObjectContext);
 	return YES;
 }
