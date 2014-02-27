@@ -16,6 +16,39 @@
 
 @implementation EventsViewController
 
+#pragma mark - UIViewController
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	Event *event = [self.events objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+	EventViewController *eventViewController = segue.destinationViewController;
+	eventViewController.managedObjectContext = self.managedObjectContext;
+	eventViewController.event = event;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+	[self fetchEvents];
+}
+
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
+	[super decodeRestorableStateWithCoder:coder];
+	self.managedObjectContext = [coder decodeObjectOfClass:[NSManagedObjectContext class]
+													forKey:@"managedObjectContext"];
+
+	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.managedObjectContext);
+}
+
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
+	[super encodeRestorableStateWithCoder:coder];
+	[coder encodeObject:self.managedObjectContext forKey:@"managedObjectContext"];
+}
+
+- (void)applicationFinishedRestoringState {
+	[super applicationFinishedRestoringState];
+	
+	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.managedObjectContext.persistentStoreCoordinator);
+}
+
 #pragma mark - EventsViewController
 
 - (IBAction)addEvent:(id)sender {
@@ -34,19 +67,6 @@
 - (void)setEvents:(NSArray *)events {
 	_events = [events copy];
 	[self.tableView reloadData];
-}
-
-#pragma mark - UIViewController
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	Event *event = [self.events objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-	EventViewController *eventViewController = segue.destinationViewController;
-	eventViewController.event = event;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	[self fetchEvents];
 }
 
 #pragma mark - UITableViewDataSource

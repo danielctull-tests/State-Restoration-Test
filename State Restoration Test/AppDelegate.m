@@ -18,7 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+	self.managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+
+	UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+	EventsViewController *eventsViewController = (EventsViewController *)navigationController.topViewController;
+	eventsViewController.managedObjectContext = self.managedObjectContext;
+
+    return YES;
+}
+
+- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+	NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 	NSURL *storeURL = [documentsURL URLByAppendingPathComponent:@"store.sqlite"];
 	NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
 	NSPersistentStoreCoordinator *persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:managedObjectModel];
@@ -28,14 +38,21 @@
 												   options:nil
 													 error:NULL];
 
-	self.managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-	self.managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator;
+	managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator;
+	_managedObjectContext = managedObjectContext;
+}
 
-	UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-	EventsViewController *eventsViewController = (EventsViewController *)navigationController.topViewController;
-	eventsViewController.managedObjectContext = self.managedObjectContext;
+- (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder {
+	[coder encodeObject:self.managedObjectContext forKey:@"managedObjectContext"];
+	return YES;
+}
 
-    return YES;
+- (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder {
+	self.managedObjectContext = [coder decodeObjectOfClass:[NSManagedObjectContext class]
+													forKey:@"managedObjectContext"];
+	
+	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.managedObjectContext);
+	return YES;
 }
 
 @end

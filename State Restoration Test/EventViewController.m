@@ -29,4 +29,22 @@
 	self.label.text = self.event.date.description;
 }
 
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
+	[super decodeRestorableStateWithCoder:coder];
+	self.managedObjectContext = [coder decodeObjectOfClass:[NSManagedObjectContext class]
+													forKey:@"managedObjectContext"];
+
+	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.managedObjectContext);
+
+	NSURL *eventObjectURI = [coder decodeObjectOfClass:[NSURL class] forKey:@"eventObjectURI"];
+    NSManagedObjectID *eventObjectID = [self.managedObjectContext.persistentStoreCoordinator managedObjectIDForURIRepresentation:eventObjectURI];
+	self.event = (Event *)[self.managedObjectContext objectWithID:eventObjectID];
+}
+
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
+	[super encodeRestorableStateWithCoder:coder];
+	[coder encodeObject:self.managedObjectContext forKey:@"managedObjectContext"];
+	[coder encodeObject:[self.event.objectID URIRepresentation] forKey:@"eventObjectURI"];
+}
+
 @end

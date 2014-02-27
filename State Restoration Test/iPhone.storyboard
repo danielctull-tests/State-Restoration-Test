@@ -7,7 +7,7 @@
         <!--Events View Controller - Events-->
         <scene sceneID="D7F-J2-sHA">
             <objects>
-                <tableViewController id="oVt-XU-aoK" customClass="EventsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EventsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oVt-XU-aoK" customClass="EventsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cuU-2h-a6F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
         <!--Event View Controller - Event-->
         <scene sceneID="lB4-oI-YVx">
             <objects>
-                <viewController id="bza-We-Q2A" customClass="EventViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bza-We-Q2A" customClass="EventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hbu-Nb-RWs"/>
                         <viewControllerLayoutGuide type="bottom" id="vd3-od-4Ik"/>
@@ -85,7 +85,7 @@
         <!--Navigation Controller-->
         <scene sceneID="MbS-Ex-BnS">
             <objects>
-                <navigationController definesPresentationContext="YES" id="rda-CL-Lka" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Navigation" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rda-CL-Lka" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lt8-oO-dzw">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
