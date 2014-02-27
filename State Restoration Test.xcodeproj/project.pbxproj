@@ -14,22 +14,7 @@
 		24E1DEEE18BFDD0700AE4E1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E1DEED18BFDD0700AE4E1F /* main.m */; };
 		24E1DEF218BFDD0700AE4E1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E1DEF118BFDD0700AE4E1F /* AppDelegate.m */; };
 		24E1DEF418BFDD0700AE4E1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E1DEF318BFDD0700AE4E1F /* Images.xcassets */; };
-		24E1DEFB18BFDD0700AE4E1F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E1DEFA18BFDD0700AE4E1F /* XCTest.framework */; };
-		24E1DEFC18BFDD0700AE4E1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E1DEE118BFDD0700AE4E1F /* Foundation.framework */; };
-		24E1DEFD18BFDD0700AE4E1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E1DEE518BFDD0700AE4E1F /* UIKit.framework */; };
-		24E1DF0518BFDD0700AE4E1F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24E1DF0318BFDD0700AE4E1F /* InfoPlist.strings */; };
-		24E1DF0718BFDD0700AE4E1F /* State_Restoration_TestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E1DF0618BFDD0700AE4E1F /* State_Restoration_TestTests.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		24E1DEFE18BFDD0700AE4E1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 24E1DED618BFDD0700AE4E1F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 24E1DEDD18BFDD0700AE4E1F;
-			remoteInfo = "State Restoration Test";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		24E1DEDE18BFDD0700AE4E1F /* State Restoration Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "State Restoration Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,15 +24,9 @@
 		24E1DEE918BFDD0700AE4E1F /* State Restoration Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "State Restoration Test-Info.plist"; sourceTree = "<group>"; };
 		24E1DEEB18BFDD0700AE4E1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24E1DEED18BFDD0700AE4E1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		24E1DEEF18BFDD0700AE4E1F /* State Restoration Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "State Restoration Test-Prefix.pch"; sourceTree = "<group>"; };
 		24E1DEF018BFDD0700AE4E1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24E1DEF118BFDD0700AE4E1F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		24E1DEF318BFDD0700AE4E1F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		24E1DEF918BFDD0700AE4E1F /* State Restoration TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "State Restoration TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		24E1DEFA18BFDD0700AE4E1F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		24E1DF0218BFDD0700AE4E1F /* State Restoration TestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "State Restoration TestTests-Info.plist"; sourceTree = "<group>"; };
-		24E1DF0418BFDD0700AE4E1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		24E1DF0618BFDD0700AE4E1F /* State_Restoration_TestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = State_Restoration_TestTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,16 +40,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24E1DEF618BFDD0700AE4E1F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24E1DEFB18BFDD0700AE4E1F /* XCTest.framework in Frameworks */,
-				24E1DEFD18BFDD0700AE4E1F /* UIKit.framework in Frameworks */,
-				24E1DEFC18BFDD0700AE4E1F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,7 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				24E1DEE718BFDD0700AE4E1F /* State Restoration Test */,
-				24E1DF0018BFDD0700AE4E1F /* State Restoration TestTests */,
 				24E1DEE018BFDD0700AE4E1F /* Frameworks */,
 				24E1DEDF18BFDD0700AE4E1F /* Products */,
 			);
@@ -88,7 +56,6 @@
 			isa = PBXGroup;
 			children = (
 				24E1DEDE18BFDD0700AE4E1F /* State Restoration Test.app */,
-				24E1DEF918BFDD0700AE4E1F /* State Restoration TestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,7 +66,6 @@
 				24E1DEE118BFDD0700AE4E1F /* Foundation.framework */,
 				24E1DEE318BFDD0700AE4E1F /* CoreGraphics.framework */,
 				24E1DEE518BFDD0700AE4E1F /* UIKit.framework */,
-				24E1DEFA18BFDD0700AE4E1F /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,38 +76,11 @@
 				24E1DEF018BFDD0700AE4E1F /* AppDelegate.h */,
 				24E1DEF118BFDD0700AE4E1F /* AppDelegate.m */,
 				24E1DEF318BFDD0700AE4E1F /* Images.xcassets */,
-				24E1DEE818BFDD0700AE4E1F /* Supporting Files */,
-			);
-			path = "State Restoration Test";
-			sourceTree = "<group>";
-		};
-		24E1DEE818BFDD0700AE4E1F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
 				24E1DEE918BFDD0700AE4E1F /* State Restoration Test-Info.plist */,
 				24E1DEEA18BFDD0700AE4E1F /* InfoPlist.strings */,
 				24E1DEED18BFDD0700AE4E1F /* main.m */,
-				24E1DEEF18BFDD0700AE4E1F /* State Restoration Test-Prefix.pch */,
 			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		24E1DF0018BFDD0700AE4E1F /* State Restoration TestTests */ = {
-			isa = PBXGroup;
-			children = (
-				24E1DF0618BFDD0700AE4E1F /* State_Restoration_TestTests.m */,
-				24E1DF0118BFDD0700AE4E1F /* Supporting Files */,
-			);
-			path = "State Restoration TestTests";
-			sourceTree = "<group>";
-		};
-		24E1DF0118BFDD0700AE4E1F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				24E1DF0218BFDD0700AE4E1F /* State Restoration TestTests-Info.plist */,
-				24E1DF0318BFDD0700AE4E1F /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
+			path = "State Restoration Test";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,24 +103,6 @@
 			productReference = 24E1DEDE18BFDD0700AE4E1F /* State Restoration Test.app */;
 			productType = "com.apple.product-type.application";
 		};
-		24E1DEF818BFDD0700AE4E1F /* State Restoration TestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 24E1DF0D18BFDD0700AE4E1F /* Build configuration list for PBXNativeTarget "State Restoration TestTests" */;
-			buildPhases = (
-				24E1DEF518BFDD0700AE4E1F /* Sources */,
-				24E1DEF618BFDD0700AE4E1F /* Frameworks */,
-				24E1DEF718BFDD0700AE4E1F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				24E1DEFF18BFDD0700AE4E1F /* PBXTargetDependency */,
-			);
-			name = "State Restoration TestTests";
-			productName = "State Restoration TestTests";
-			productReference = 24E1DEF918BFDD0700AE4E1F /* State Restoration TestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -190,11 +111,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Daniel Tull";
-				TargetAttributes = {
-					24E1DEF818BFDD0700AE4E1F = {
-						TestTargetID = 24E1DEDD18BFDD0700AE4E1F;
-					};
-				};
 			};
 			buildConfigurationList = 24E1DED918BFDD0700AE4E1F /* Build configuration list for PBXProject "State Restoration Test" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -209,7 +125,6 @@
 			projectRoot = "";
 			targets = (
 				24E1DEDD18BFDD0700AE4E1F /* State Restoration Test */,
-				24E1DEF818BFDD0700AE4E1F /* State Restoration TestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -221,14 +136,6 @@
 			files = (
 				24E1DEEC18BFDD0700AE4E1F /* InfoPlist.strings in Resources */,
 				24E1DEF418BFDD0700AE4E1F /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		24E1DEF718BFDD0700AE4E1F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24E1DF0518BFDD0700AE4E1F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,37 +151,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24E1DEF518BFDD0700AE4E1F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24E1DF0718BFDD0700AE4E1F /* State_Restoration_TestTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		24E1DEFF18BFDD0700AE4E1F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 24E1DEDD18BFDD0700AE4E1F /* State Restoration Test */;
-			targetProxy = 24E1DEFE18BFDD0700AE4E1F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		24E1DEEA18BFDD0700AE4E1F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				24E1DEEB18BFDD0700AE4E1F /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		24E1DF0318BFDD0700AE4E1F /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				24E1DF0418BFDD0700AE4E1F /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -360,7 +243,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "State Restoration Test/State Restoration Test-Prefix.pch";
 				INFOPLIST_FILE = "State Restoration Test/State Restoration Test-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -373,52 +255,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "State Restoration Test/State Restoration Test-Prefix.pch";
 				INFOPLIST_FILE = "State Restoration Test/State Restoration Test-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		24E1DF0E18BFDD0700AE4E1F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/State Restoration Test.app/State Restoration Test";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "State Restoration Test/State Restoration Test-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "State Restoration TestTests/State Restoration TestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		24E1DF0F18BFDD0700AE4E1F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/State Restoration Test.app/State Restoration Test";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "State Restoration Test/State Restoration Test-Prefix.pch";
-				INFOPLIST_FILE = "State Restoration TestTests/State Restoration TestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -439,14 +278,6 @@
 			buildConfigurations = (
 				24E1DF0B18BFDD0700AE4E1F /* Debug */,
 				24E1DF0C18BFDD0700AE4E1F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		24E1DF0D18BFDD0700AE4E1F /* Build configuration list for PBXNativeTarget "State Restoration TestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				24E1DF0E18BFDD0700AE4E1F /* Debug */,
-				24E1DF0F18BFDD0700AE4E1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
