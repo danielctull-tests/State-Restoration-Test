@@ -17,6 +17,7 @@
 		24E1DF1218BFDD8400AE4E1F /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E1DF1118BFDD8400AE4E1F /* EventsViewController.m */; };
 		24E1DF1418BFDDC800AE4E1F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E1DF1318BFDDC800AE4E1F /* iPhone.storyboard */; };
 		24E1DF1718BFDE4A00AE4E1F /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E1DF1618BFDE4A00AE4E1F /* EventViewController.m */; };
+		24E1DF1A18BFE00A00AE4E1F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24E1DF1818BFE00A00AE4E1F /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		24E1DF1318BFDDC800AE4E1F /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		24E1DF1518BFDE4A00AE4E1F /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		24E1DF1618BFDE4A00AE4E1F /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		24E1DF1918BFE00A00AE4E1F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				24E1DF1518BFDE4A00AE4E1F /* EventViewController.h */,
 				24E1DF1618BFDE4A00AE4E1F /* EventViewController.m */,
 				24E1DF1318BFDDC800AE4E1F /* iPhone.storyboard */,
+				24E1DF1818BFE00A00AE4E1F /* Model.xcdatamodeld */,
 				24E1DEF318BFDD0700AE4E1F /* Images.xcassets */,
 				24E1DEE918BFDD0700AE4E1F /* State Restoration Test-Info.plist */,
 				24E1DEEA18BFDD0700AE4E1F /* InfoPlist.strings */,
@@ -162,6 +165,7 @@
 			files = (
 				24E1DEF218BFDD0700AE4E1F /* AppDelegate.m in Sources */,
 				24E1DF1718BFDE4A00AE4E1F /* EventViewController.m in Sources */,
+				24E1DF1A18BFE00A00AE4E1F /* Model.xcdatamodeld in Sources */,
 				24E1DF1218BFDD8400AE4E1F /* EventsViewController.m in Sources */,
 				24E1DEEE18BFDD0700AE4E1F /* main.m in Sources */,
 			);
@@ -306,6 +310,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		24E1DF1818BFE00A00AE4E1F /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				24E1DF1918BFE00A00AE4E1F /* Model.xcdatamodel */,
+			);
+			currentVersion = 24E1DF1918BFE00A00AE4E1F /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 24E1DED618BFDD0700AE4E1F /* Project object */;
 }
