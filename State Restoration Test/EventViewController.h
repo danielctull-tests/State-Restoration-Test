@@ -7,7 +7,8 @@
 //
 
 @import UIKit;
+@class Event;
 
 @interface EventViewController : UIViewController
-
+@property (nonatomic) Event *event;
 @end

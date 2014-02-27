@@ -7,32 +7,26 @@
 //
 
 #import "EventViewController.h"
+#import "Event.h"
 
 @interface EventViewController ()
-
+@property (nonatomic, weak) IBOutlet UILabel *label;
 @end
 
 @implementation EventViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+#pragma mark - EventViewController
+
+- (void)setEvent:(Event *)event {
+	_event = event;
+	self.label.text = event.date.description;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
+#pragma mark - UIViewController
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	self.label.text = self.event.date.description;
 }
 
 @end

@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Events View Controller - Root View Controller-->
+        <!--Events View Controller - Events-->
         <scene sceneID="D7F-J2-sHA">
             <objects>
                 <tableViewController id="oVt-XU-aoK" customClass="EventsViewController" sceneMemberID="viewController">
@@ -13,12 +13,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fnh-ec-waA">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="HPL-80-Lo9" style="IBUITableViewCellStyleDefault" id="fnh-ec-waA">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fnh-ec-waA" id="c7q-Up-Ouq">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HPL-80-Lo9">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="bza-We-Q2A" kind="push" id="Lla-Q9-PB3"/>
@@ -26,16 +35,22 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="y6k-E4-Ngi"/>
+                    <navigationItem key="navigationItem" title="Events" id="y6k-E4-Ngi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QmR-5O-YJc">
+                            <connections>
+                                <action selector="addEvent:" destination="oVt-XU-aoK" id="G5D-Mm-TBv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1t-0T-aID" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="759" y="76"/>
         </scene>
-        <!--View Controller-->
+        <!--Event View Controller - Event-->
         <scene sceneID="lB4-oI-YVx">
             <objects>
-                <viewController id="bza-We-Q2A" sceneMemberID="viewController">
+                <viewController id="bza-We-Q2A" customClass="EventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hbu-Nb-RWs"/>
                         <viewControllerLayoutGuide type="bottom" id="vd3-od-4Ik"/>
@@ -43,9 +58,25 @@
                     <view key="view" contentMode="scaleToFill" id="ig9-g7-RN7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1o-PN-Fgk">
+                                <rect key="frame" x="140" y="274" width="40" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="U1o-PN-Fgk" secondAttribute="centerX" id="7LT-Ve-wLl"/>
+                            <constraint firstAttribute="centerY" secondItem="U1o-PN-Fgk" secondAttribute="centerY" id="ajt-6Y-uA0"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mtg-5t-GG0"/>
+                    <navigationItem key="navigationItem" title="Event" id="mtg-5t-GG0"/>
+                    <connections>
+                        <outlet property="label" destination="U1o-PN-Fgk" id="dMA-UC-1TZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0a-T7-neh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

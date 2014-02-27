@@ -18,6 +18,8 @@
 		24E1DF1418BFDDC800AE4E1F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E1DF1318BFDDC800AE4E1F /* iPhone.storyboard */; };
 		24E1DF1718BFDE4A00AE4E1F /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E1DF1618BFDE4A00AE4E1F /* EventViewController.m */; };
 		24E1DF1A18BFE00A00AE4E1F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24E1DF1818BFE00A00AE4E1F /* Model.xcdatamodeld */; };
+		24E1DF2018BFE0FA00AE4E1F /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E1DF1C18BFE0FA00AE4E1F /* Event.m */; };
+		24E1DF2118BFE0FA00AE4E1F /* _Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E1DF1F18BFE0FA00AE4E1F /* _Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		24E1DF1518BFDE4A00AE4E1F /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		24E1DF1618BFDE4A00AE4E1F /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		24E1DF1918BFE00A00AE4E1F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		24E1DF1B18BFE0FA00AE4E1F /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Model/Event.h; sourceTree = "<group>"; };
+		24E1DF1C18BFE0FA00AE4E1F /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Model/Event.m; sourceTree = "<group>"; };
+		24E1DF1E18BFE0FA00AE4E1F /* _Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Event.h; sourceTree = "<group>"; };
+		24E1DF1F18BFE0FA00AE4E1F /* _Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Event.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,12 +97,25 @@
 				24E1DF1618BFDE4A00AE4E1F /* EventViewController.m */,
 				24E1DF1318BFDDC800AE4E1F /* iPhone.storyboard */,
 				24E1DF1818BFE00A00AE4E1F /* Model.xcdatamodeld */,
+				24E1DF1B18BFE0FA00AE4E1F /* Event.h */,
+				24E1DF1C18BFE0FA00AE4E1F /* Event.m */,
+				24E1DF1D18BFE0FA00AE4E1F /* Generated */,
 				24E1DEF318BFDD0700AE4E1F /* Images.xcassets */,
 				24E1DEE918BFDD0700AE4E1F /* State Restoration Test-Info.plist */,
 				24E1DEEA18BFDD0700AE4E1F /* InfoPlist.strings */,
 				24E1DEED18BFDD0700AE4E1F /* main.m */,
 			);
 			path = "State Restoration Test";
+			sourceTree = "<group>";
+		};
+		24E1DF1D18BFE0FA00AE4E1F /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				24E1DF1E18BFE0FA00AE4E1F /* _Event.h */,
+				24E1DF1F18BFE0FA00AE4E1F /* _Event.m */,
+			);
+			name = Generated;
+			path = Model/Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +182,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24E1DF2018BFE0FA00AE4E1F /* Event.m in Sources */,
 				24E1DEF218BFDD0700AE4E1F /* AppDelegate.m in Sources */,
 				24E1DF1718BFDE4A00AE4E1F /* EventViewController.m in Sources */,
 				24E1DF1A18BFE00A00AE4E1F /* Model.xcdatamodeld in Sources */,
+				24E1DF2118BFE0FA00AE4E1F /* _Event.m in Sources */,
 				24E1DF1218BFDD8400AE4E1F /* EventsViewController.m in Sources */,
 				24E1DEEE18BFDD0700AE4E1F /* main.m in Sources */,
 			);

@@ -8,6 +8,7 @@
 
 @import CoreData;
 #import "AppDelegate.h"
+#import "EventsViewController.h"
 
 @interface AppDelegate ()
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -29,6 +30,10 @@
 
 	self.managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
 	self.managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator;
+
+	UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+	EventsViewController *eventsViewController = (EventsViewController *)navigationController.topViewController;
+	eventsViewController.managedObjectContext = self.managedObjectContext;
 
     return YES;
 }

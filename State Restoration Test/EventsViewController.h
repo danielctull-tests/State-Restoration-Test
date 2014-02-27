@@ -7,7 +7,8 @@
 //
 
 @import UIKit;
+@import CoreData;
 
 @interface EventsViewController : UITableViewController
-
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @end
