@@ -16,6 +16,7 @@
 		24E1DEF418BFDD0700AE4E1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E1DEF318BFDD0700AE4E1F /* Images.xcassets */; };
 		24E1DF1218BFDD8400AE4E1F /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E1DF1118BFDD8400AE4E1F /* EventsViewController.m */; };
 		24E1DF1418BFDDC800AE4E1F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E1DF1318BFDDC800AE4E1F /* iPhone.storyboard */; };
+		24E1DF1718BFDE4A00AE4E1F /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E1DF1618BFDE4A00AE4E1F /* EventViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		24E1DF1018BFDD8400AE4E1F /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
 		24E1DF1118BFDD8400AE4E1F /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
 		24E1DF1318BFDDC800AE4E1F /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		24E1DF1518BFDE4A00AE4E1F /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		24E1DF1618BFDE4A00AE4E1F /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				24E1DEF118BFDD0700AE4E1F /* AppDelegate.m */,
 				24E1DF1018BFDD8400AE4E1F /* EventsViewController.h */,
 				24E1DF1118BFDD8400AE4E1F /* EventsViewController.m */,
+				24E1DF1518BFDE4A00AE4E1F /* EventViewController.h */,
+				24E1DF1618BFDE4A00AE4E1F /* EventViewController.m */,
 				24E1DF1318BFDDC800AE4E1F /* iPhone.storyboard */,
 				24E1DEF318BFDD0700AE4E1F /* Images.xcassets */,
 				24E1DEE918BFDD0700AE4E1F /* State Restoration Test-Info.plist */,
@@ -156,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24E1DEF218BFDD0700AE4E1F /* AppDelegate.m in Sources */,
+				24E1DF1718BFDE4A00AE4E1F /* EventViewController.m in Sources */,
 				24E1DF1218BFDD8400AE4E1F /* EventsViewController.m in Sources */,
 				24E1DEEE18BFDD0700AE4E1F /* main.m in Sources */,
 			);
