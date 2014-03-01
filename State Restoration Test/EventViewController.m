@@ -11,6 +11,7 @@
 
 @interface EventViewController ()
 @property (nonatomic, weak) IBOutlet UILabel *label;
+@property (nonatomic) NSURL *eventObjectURI;
 @end
 
 @implementation EventViewController
@@ -22,6 +23,24 @@
 	self.label.text = event.date.description;
 }
 
+- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+	_managedObjectContext = managedObjectContext;
+	[self retrieveEvent];
+}
+
+- (void)setEventObjectURI:(NSURL *)eventObjectURI {
+	_eventObjectURI = [eventObjectURI copy];
+	[self retrieveEvent];
+}
+
+- (void)retrieveEvent {
+	if (!self.managedObjectContext) return;
+	if (!self.eventObjectURI) return;
+
+	NSManagedObjectID *eventObjectID = [self.managedObjectContext.persistentStoreCoordinator managedObjectIDForURIRepresentation:self.eventObjectURI];
+	self.event = (Event *)[self.managedObjectContext objectWithID:eventObjectID];
+}
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -31,19 +50,11 @@
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
 	[super decodeRestorableStateWithCoder:coder];
-	self.managedObjectContext = [coder decodeObjectOfClass:[NSManagedObjectContext class]
-													forKey:@"managedObjectContext"];
-
-	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.managedObjectContext);
-
-	NSURL *eventObjectURI = [coder decodeObjectOfClass:[NSURL class] forKey:@"eventObjectURI"];
-    NSManagedObjectID *eventObjectID = [self.managedObjectContext.persistentStoreCoordinator managedObjectIDForURIRepresentation:eventObjectURI];
-	self.event = (Event *)[self.managedObjectContext objectWithID:eventObjectID];
+	self.eventObjectURI = [coder decodeObjectOfClass:[NSURL class] forKey:@"eventObjectURI"];
 }
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
 	[super encodeRestorableStateWithCoder:coder];
-	[coder encodeObject:self.managedObjectContext forKey:@"managedObjectContext"];
 	[coder encodeObject:[self.event.objectID URIRepresentation] forKey:@"eventObjectURI"];
 }
 

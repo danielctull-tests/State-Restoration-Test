@@ -30,23 +30,9 @@
 	[self fetchEvents];
 }
 
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
-	[super decodeRestorableStateWithCoder:coder];
-	self.managedObjectContext = [coder decodeObjectOfClass:[NSManagedObjectContext class]
-													forKey:@"managedObjectContext"];
-
-	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.managedObjectContext);
-}
-
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
-	[super encodeRestorableStateWithCoder:coder];
-	[coder encodeObject:self.managedObjectContext forKey:@"managedObjectContext"];
-}
-
-- (void)applicationFinishedRestoringState {
-	[super applicationFinishedRestoringState];
-	
-	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.managedObjectContext.persistentStoreCoordinator);
+- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+	_managedObjectContext = managedObjectContext;
+	[self fetchEvents];
 }
 
 #pragma mark - EventsViewController
