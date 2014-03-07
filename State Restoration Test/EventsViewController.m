@@ -9,6 +9,7 @@
 #import "EventsViewController.h"
 #import "EventViewController.h"
 #import "Event.h"
+#import "CoreDataStack.h"
 
 @interface EventsViewController ()
 @property (nonatomic) NSArray *events;
@@ -18,10 +19,22 @@
 
 #pragma mark - UIViewController
 
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
+	[super decodeRestorableStateWithCoder:coder];
+	self.coreDataStack = [coder decodeObjectOfClass:[CoreDataStack class] forKey:@"coreDataStack"];
+	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.coreDataStack);
+}
+
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
+	[super encodeRestorableStateWithCoder:coder];
+	[coder encodeObject:self.coreDataStack forKey:@"coreDataStack"];
+	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.coreDataStack);
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	Event *event = [self.events objectAtIndex:self.tableView.indexPathForSelectedRow.row];
 	EventViewController *eventViewController = segue.destinationViewController;
-	eventViewController.managedObjectContext = self.managedObjectContext;
+	eventViewController.coreDataStack = self.coreDataStack;
 	eventViewController.event = event;
 }
 
@@ -30,24 +43,24 @@
 	[self fetchEvents];
 }
 
-- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
-	_managedObjectContext = managedObjectContext;
+- (void)setCoreDataStack:(CoreDataStack *)coreDataStack {
+	_coreDataStack = coreDataStack;
 	[self fetchEvents];
 }
 
 #pragma mark - EventsViewController
 
 - (IBAction)addEvent:(id)sender {
-	Event *event = [Event insertInManagedObjectContext:self.managedObjectContext];
+	Event *event = [Event insertInManagedObjectContext:self.coreDataStack.managedObjectContext];
 	event.date = [NSDate new];
-	[self.managedObjectContext save:NULL];
+	[self.coreDataStack.managedObjectContext save:NULL];
 	[self fetchEvents];
 }
 
 - (void)fetchEvents {
 	NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[Event entityName]];
 	request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:EventAttributes.date ascending:NO]];
-	self.events = [self.managedObjectContext executeFetchRequest:request error:NULL];
+	self.events = [self.coreDataStack.managedObjectContext executeFetchRequest:request error:NULL];
 }
 
 - (void)setEvents:(NSArray *)events {

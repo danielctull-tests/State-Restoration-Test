@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24CB97FA18CA19ED0036B8B4 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CB97F918CA19ED0036B8B4 /* CoreDataStack.m */; };
 		24E1DEE218BFDD0700AE4E1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E1DEE118BFDD0700AE4E1F /* Foundation.framework */; };
 		24E1DEE418BFDD0700AE4E1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E1DEE318BFDD0700AE4E1F /* CoreGraphics.framework */; };
 		24E1DEE618BFDD0700AE4E1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E1DEE518BFDD0700AE4E1F /* UIKit.framework */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24CB97F818CA19ED0036B8B4 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		24CB97F918CA19ED0036B8B4 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		24E1DEDE18BFDD0700AE4E1F /* State Restoration Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "State Restoration Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E1DEE118BFDD0700AE4E1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		24E1DEE318BFDD0700AE4E1F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,6 +94,8 @@
 			children = (
 				24E1DEF018BFDD0700AE4E1F /* AppDelegate.h */,
 				24E1DEF118BFDD0700AE4E1F /* AppDelegate.m */,
+				24CB97F818CA19ED0036B8B4 /* CoreDataStack.h */,
+				24CB97F918CA19ED0036B8B4 /* CoreDataStack.m */,
 				24E1DF1018BFDD8400AE4E1F /* EventsViewController.h */,
 				24E1DF1118BFDD8400AE4E1F /* EventsViewController.m */,
 				24E1DF1518BFDE4A00AE4E1F /* EventViewController.h */,
@@ -185,6 +190,7 @@
 				24E1DF2018BFE0FA00AE4E1F /* Event.m in Sources */,
 				24E1DEF218BFDD0700AE4E1F /* AppDelegate.m in Sources */,
 				24E1DF1718BFDE4A00AE4E1F /* EventViewController.m in Sources */,
+				24CB97FA18CA19ED0036B8B4 /* CoreDataStack.m in Sources */,
 				24E1DF1A18BFE00A00AE4E1F /* Model.xcdatamodeld in Sources */,
 				24E1DF2118BFE0FA00AE4E1F /* _Event.m in Sources */,
 				24E1DF1218BFDD8400AE4E1F /* EventsViewController.m in Sources */,
@@ -329,6 +335,7 @@
 				24E1DF0C18BFDD0700AE4E1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

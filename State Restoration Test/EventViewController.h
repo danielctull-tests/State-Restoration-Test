@@ -9,8 +9,9 @@
 @import UIKit;
 @import CoreData;
 @class Event;
+@class CoreDataStack;
 
 @interface EventViewController : UIViewController
-@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) CoreDataStack *coreDataStack;
 @property (nonatomic) Event *event;
 @end

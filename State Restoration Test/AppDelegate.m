@@ -9,51 +9,45 @@
 @import CoreData;
 #import "AppDelegate.h"
 #import "EventsViewController.h"
+#import "CoreDataStack.h"
 
 @interface AppDelegate ()
-@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) CoreDataStack *coreDataStack;
 @end
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	self.managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+	// If not restored
+	if (!self.coreDataStack) {
+		NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+		NSURL *storeURL = [documentsURL URLByAppendingPathComponent:@"store.sqlite"];
+		NSBundle *mainBundle = [NSBundle mainBundle];
+		NSURL *modelURL = [mainBundle URLForResource:@"Model" withExtension:@"momd"];
+		self.coreDataStack = [[CoreDataStack alloc] initWithModelURL:modelURL storeType:NSSQLiteStoreType storeURL:storeURL storeOptions:nil];
+
+		UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+		id viewController = navigationController.topViewController;
+		if ([viewController respondsToSelector:@selector(setCoreDataStack:)])
+			[viewController setCoreDataStack:self.coreDataStack];
+	}
+
 	return YES;
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-	UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-	for (id viewController in navigationController.childViewControllers)
-		if ([viewController respondsToSelector:@selector(setManagedObjectContext:)])
-			[viewController setManagedObjectContext:self.managedObjectContext];
-
-    return YES;
-}
-
-- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
-	NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-	NSURL *storeURL = [documentsURL URLByAppendingPathComponent:@"store.sqlite"];
-	NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
-	NSPersistentStoreCoordinator *persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:managedObjectModel];
-	[persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
-											 configuration:nil
-													   URL:storeURL
-												   options:nil
-													 error:NULL];
-
-	managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator;
-	_managedObjectContext = managedObjectContext;
-}
-
 - (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder {
-	[coder encodeObject:self.managedObjectContext forKey:@"managedObjectContext"];
+	[coder encodeObject:self.coreDataStack forKey:@"coreDataStack"];
 	return YES;
 }
 
 - (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder {
-	self.managedObjectContext = [coder decodeObjectOfClass:[NSManagedObjectContext class] forKey:@"managedObjectContext"];
 	return YES;
+}
+
+- (void)application:(UIApplication *)application didDecodeRestorableStateWithCoder:(NSCoder *)coder {
+	self.coreDataStack = [coder decodeObjectOfClass:[CoreDataStack class] forKey:@"coreDataStack"];
+	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.coreDataStack);
 }
 
 @end

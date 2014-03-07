@@ -8,7 +8,8 @@
 
 @import UIKit;
 @import CoreData;
+@class CoreDataStack;
 
 @interface EventsViewController : UITableViewController
-@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) CoreDataStack *coreDataStack;
 @end
