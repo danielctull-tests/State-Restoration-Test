@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6419C0B3-CFE4-4021-84D7-9F72B1AFEFB6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>State Restoration Test</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>99822549-C3AA-4FBD-8F12-26C4BC9CB2A3</key>
+		<string>ssh://github.com/danielctull-tests/State-Restoration-Test.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>State Restoration Test.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>99822549-C3AA-4FBD-8F12-26C4BC9CB2A3</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/danielctull-tests/State-Restoration-Test.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>99822549-C3AA-4FBD-8F12-26C4BC9CB2A3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>99822549-C3AA-4FBD-8F12-26C4BC9CB2A3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>State Restoration Test</string>
+		</dict>
+	</array>
+</dict>
+</plist>

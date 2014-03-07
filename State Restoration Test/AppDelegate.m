@@ -28,7 +28,7 @@
 		self.coreDataStack = [[CoreDataStack alloc] initWithModelURL:modelURL storeType:NSSQLiteStoreType storeURL:storeURL storeOptions:nil];
 
 		UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-		id viewController = navigationController.topViewController;
+		id viewController = [navigationController.childViewControllers firstObject];
 		if ([viewController respondsToSelector:@selector(setCoreDataStack:)])
 			[viewController setCoreDataStack:self.coreDataStack];
 	}
