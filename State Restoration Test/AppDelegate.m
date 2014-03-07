@@ -42,12 +42,9 @@
 }
 
 - (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder {
-	return YES;
-}
-
-- (void)application:(UIApplication *)application didDecodeRestorableStateWithCoder:(NSCoder *)coder {
 	self.coreDataStack = [coder decodeObjectOfClass:[CoreDataStack class] forKey:@"coreDataStack"];
 	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.coreDataStack);
+	return YES;
 }
 
 @end

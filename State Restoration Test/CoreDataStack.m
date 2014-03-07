@@ -16,7 +16,7 @@ const struct CoreDataStackProperties CoreDataStackProperties = {
 	.managedObjectContext = @"managedObjectContext"
 };
 
-@interface CoreDataStack () <UIObjectRestoration, NSSecureCoding>
+@interface CoreDataStack () <UIObjectRestoration>
 @property (nonatomic, readwrite) NSURL *modelURL;
 @property (nonatomic, readwrite) NSString *storeType;
 @property (nonatomic, readwrite) NSURL *storeURL;
@@ -110,27 +110,5 @@ const struct CoreDataStackProperties CoreDataStackProperties = {
 	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), stack);
 	return stack;
 }
-
-#pragma mark - NSSecureCoding
-
-+ (BOOL)supportsSecureCoding {
-	return YES;
-}
-
-- (id)initWithCoder:(NSCoder *)coder {
-	NSURL *modelURL = [coder decodeObjectOfClass:[NSURL class] forKey:CoreDataStackProperties.modelURL];
-	NSString *storeType = [coder decodeObjectOfClass:[NSString class] forKey:CoreDataStackProperties.storeType];
-	NSURL *storeURL = [coder decodeObjectOfClass:[NSURL class] forKey:CoreDataStackProperties.storeURL];
-	NSDictionary *storeOptions = [coder decodeObjectOfClass:[NSDictionary class] forKey:CoreDataStackProperties.storeOptions];
-	return [self initWithModelURL:modelURL storeType:storeType storeURL:storeURL storeOptions:storeOptions];
-}
-
-- (void)encodeWithCoder:(NSCoder *)coder {
-	[coder encodeObject:self.modelURL forKey:CoreDataStackProperties.modelURL];
-	[coder encodeObject:self.storeType forKey:CoreDataStackProperties.storeType];
-	[coder encodeObject:self.storeURL forKey:CoreDataStackProperties.storeURL];
-	[coder encodeObject:self.storeOptions forKey:CoreDataStackProperties.storeOptions];
-}
-
 
 @end
