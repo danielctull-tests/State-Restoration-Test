@@ -17,19 +17,19 @@
 
 @implementation EventsViewController
 
-#pragma mark - UIViewController
+#pragma mark - UIStateRestoring
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
 	[super decodeRestorableStateWithCoder:coder];
 	self.coreDataStack = [coder decodeObjectOfClass:[CoreDataStack class] forKey:@"coreDataStack"];
-	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.coreDataStack);
 }
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
 	[super encodeRestorableStateWithCoder:coder];
 	[coder encodeObject:self.coreDataStack forKey:@"coreDataStack"];
-	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.coreDataStack);
 }
+
+#pragma mark - UIViewController
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	Event *event = [self.events objectAtIndex:self.tableView.indexPathForSelectedRow.row];
@@ -43,12 +43,12 @@
 	[self fetchEvents];
 }
 
+#pragma mark - EventsViewController
+
 - (void)setCoreDataStack:(CoreDataStack *)coreDataStack {
 	_coreDataStack = coreDataStack;
 	[self fetchEvents];
 }
-
-#pragma mark - EventsViewController
 
 - (IBAction)addEvent:(id)sender {
 	Event *event = [Event insertInManagedObjectContext:self.coreDataStack.managedObjectContext];

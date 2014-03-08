@@ -38,14 +38,12 @@
 	NSManagedObjectContext *context = self.coreDataStack.managedObjectContext;
 	NSManagedObjectID *eventObjectID = [context.persistentStoreCoordinator managedObjectIDForURIRepresentation:eventObjectURI];
 	self.event = (Event *)[context objectWithID:eventObjectID];
-	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.coreDataStack);
 }
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
 	[super encodeRestorableStateWithCoder:coder];
 	[coder encodeObject:self.coreDataStack forKey:@"coreDataStack"];
 	[coder encodeObject:[self.event.objectID URIRepresentation] forKey:@"eventObjectURI"];
-	NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), self.coreDataStack);
 }
 
 @end
