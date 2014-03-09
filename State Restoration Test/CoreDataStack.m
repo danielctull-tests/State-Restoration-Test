@@ -17,7 +17,6 @@ const struct CoreDataStackProperties CoreDataStackProperties = {
 };
 
 @interface CoreDataStack () <UIObjectRestoration>
-@property (nonatomic) NSString *identifier;
 @end
 
 @implementation CoreDataStack
@@ -26,10 +25,9 @@ const struct CoreDataStackProperties CoreDataStackProperties = {
 #pragma mark - NSObject
 
 - (NSString *)description {
-	return [NSString stringWithFormat:@"<%@: %p; identifier = %@; model = %@; store = %@>",
+	return [NSString stringWithFormat:@"<%@: %p; model = %@; store = %@>",
 			NSStringFromClass([self class]),
 			self,
-			self.identifier,
 			[self.modelURL lastPathComponent],
 			[self.storeURL lastPathComponent]];
 }
@@ -41,16 +39,6 @@ const struct CoreDataStackProperties CoreDataStackProperties = {
 						storeURL:(NSURL *)storeURL
 					storeOptions:(NSDictionary *)storeOptions {
 
-	NSString *identifier = [[NSUUID UUID] UUIDString];
-	return [self initWithModelURL:modelURL storeType:storeType storeURL:storeURL storeOptions:storeOptions identifier:identifier];
-}
-
-- (instancetype)initWithModelURL:(NSURL *)modelURL
-					   storeType:(NSString *)storeType
-						storeURL:(NSURL *)storeURL
-					storeOptions:(NSDictionary *)storeOptions
-					  identifier:(NSString *)identifier {
-
 	self = [self init];
 	if (!self) return nil;
 
@@ -58,9 +46,9 @@ const struct CoreDataStackProperties CoreDataStackProperties = {
 	_storeType = [storeType copy];
 	_storeOptions = [storeOptions copy];
 	_storeURL = [storeURL copy];
-	_identifier = [identifier copy];
 
-	[UIApplication registerObjectForStateRestoration:self restorationIdentifier:_identifier];
+	NSString *identifier = [[NSUUID UUID] UUIDString];
+	[UIApplication registerObjectForStateRestoration:self restorationIdentifier:identifier];
 
 	return self;
 }
@@ -106,13 +94,17 @@ const struct CoreDataStackProperties CoreDataStackProperties = {
 
 + (id<UIStateRestoring>)objectWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder {
 
-	NSString *identifier = [identifierComponents lastObject];
 	NSURL *modelURL = [coder decodeObjectOfClass:[NSURL class] forKey:CoreDataStackProperties.modelURL];
 	NSString *storeType = [coder decodeObjectOfClass:[NSString class] forKey:CoreDataStackProperties.storeType];
 	NSURL *storeURL = [coder decodeObjectOfClass:[NSURL class] forKey:CoreDataStackProperties.storeURL];
 	NSDictionary *storeOptions = [coder decodeObjectOfClass:[NSDictionary class] forKey:CoreDataStackProperties.storeOptions];
 
-	return [[CoreDataStack alloc] initWithModelURL:modelURL storeType:storeType storeURL:storeURL storeOptions:storeOptions identifier:identifier];
+	CoreDataStack *stack = [[self alloc] initWithModelURL:modelURL storeType:storeType storeURL:storeURL storeOptions:storeOptions];
+
+	NSString *identifier = [identifierComponents lastObject];
+	[UIApplication registerObjectForStateRestoration:stack restorationIdentifier:identifier];
+
+	return stack;
 }
 
 @end
